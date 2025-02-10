@@ -4,12 +4,11 @@ import Logo from './Logo';
 import NavLink from './NavLink';
 
 const navItems = [
-  'Home',
-  'About Us',
-  'Services',
-  'Case Studies',
-  'Blog',
-  'Contact'
+  { name: 'Store', href: 'https://www.sagedmarketing.com/browse/catRRAP6_594177.aspx' },
+  { name: 'About Us', href: 'https://www.facebook.com/profile.php?id=61563105300751' },
+  { name: 'Services', href: '#services' },
+  { name: 'Reviews', href: 'https://www.facebook.com/profile.php?id=61563105300751&sk=reviews' },
+  { name: 'Contact', href: 'https://www.facebook.com/profile.php?id=61563105300751' }
 ];
 
 const Header = () => {
@@ -25,10 +24,10 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <NavLink
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                key={item.name}
+                href={item.href}
               >
-                {item}
+                {item.name}
               </NavLink>
             ))}
           </nav>

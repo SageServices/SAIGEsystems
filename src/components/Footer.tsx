@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Facebook, X } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -18,10 +18,16 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['About', 'Services', 'Case Studies', 'Blog'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="hover:text-blue-400 transition-colors">
-                    {item}
+              {[
+                { name: 'Store', href: 'https://www.sagedmarketing.com/browse/catRRAP6_594177.aspx' },
+                { name: 'About Us', href: 'https://www.facebook.com/profile.php?id=61563105300751' },
+                { name: 'Services', href: '#services' },
+                { name: 'Reviews', href: 'https://www.facebook.com/profile.php?id=61563105300751&sk=reviews' },
+                { name: 'Contact', href: 'https://www.facebook.com/profile.php?id=61563105300751' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="hover:text-blue-400 transition-colors">
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -33,7 +39,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-blue-400 transition-colors">
+                  <a href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-blue-400 transition-colors">
                     {item}
                   </a>
                 </li>
@@ -42,17 +48,14 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Connect</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              {[Twitter, Linkedin, Github].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                >
-                  <Icon className="h-6 w-6" />
-                </a>
-              ))}
+              <a href="https://www.facebook.com/profile.php?id=61563105300751" className="hover:text-blue-400 transition-colors">
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a href="https://twitter.com/yourprofile" className="hover:text-blue-400 transition-colors">
+                <X className="h-6 w-6" />
+              </a>
             </div>
           </div>
         </div>

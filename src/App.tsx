@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Footer from './components/Footer';
-import ChatBot from './components/ChatBot';
+import ChatBox from './components/ChatBox';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Services />
       </main>
       <Footer />
-      <ChatBot />
+      <ChatBox />
     </div>
   );
 }
